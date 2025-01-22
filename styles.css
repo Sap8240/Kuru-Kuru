@@ -1,0 +1,97 @@
+body{ 
+  color:whitesmoke;
+  text-emphasis-color: black;
+  text-align: center;
+  background-image: url(bg1.jpg);
+  background-size:cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 50px;
+} 
+P{
+  text-align: center;
+  width: 25%;
+  font-family: "EB Garamond", serif;
+  color: aliceblue;
+  font-style:italic;
+  font-weight: 550;
+  font-size: 20px;
+}
+button{
+  text-align: center;
+  z-index: -0.5;
+  font-family:cursive;
+  background-color: rgba(147, 58, 231, 0.76);
+  color: aliceblue;
+  margin-bottom: 10%;
+  width: 20%;
+  padding: 2%;
+  border-radius: 20px;
+}
+input{
+  text-align: center;
+  width: 25%;
+  height: 5%;
+  font-family: cursive;
+  color:white;
+  background-color: rgba(132, 25, 182, 0.704);
+}
+table{ 
+  text-align: center;
+  height: auto;
+  width: 50%;
+  padding: 5px;
+  font-family: "EB Garamond", serif;
+  color: aliceblue;
+  font-style:italic;
+  font-weight: 550;
+  font-optical-sizing: auto;
+  font-size: 20px;
+
+}
+pre{
+text-align: center;
+height: auto;
+width: auto;
+font-family: cursive;
+
+}
+tr{
+padding: 50px;
+background-color: rgba(152, 28, 209, 0.788);
+}
+th{
+background-color: rgba(114, 18, 155, 0.686);
+}
+#usernameInput::placeholder{
+  color:rgba(255, 255, 255, 0.697);
+  
+}
+#input{
+  top:30px;
+  padding: 5%;
+}
+#content{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 40px;
+}
+#text{
+  text-align: center;
+  padding: 5px;
+  font-optical-sizing: auto;
+  font-size: 180%;
+  padding-top:0%;
+  padding-bottom: 40px;
+  font-family: "Dynapuff", serif;
+}
+#head h1{
+  font-family: "Dynapuff";
+  font-size: 300%;
+  padding: 5%;
+}

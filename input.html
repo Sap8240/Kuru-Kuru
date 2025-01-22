@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Click Counter with One-Time Animated GIF</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
+<style>
+  
+  @keyframes moveGif {
+    0% { right: 100%; }
+    100% { right: -100px; }
+  }
+  #gifContainer img {
+    position: fixed;
+    bottom: 20px;
+    right: 100%;
+    animation: moveGif 1s linear;
+  }
+</style>
+<script>
+let users = {}; 
+
+function setUsername() {
+  const username = document.getElementById("usernameInput").value;
+  if (username) {
+    if (!users[username]) {
+      users[username] = 0;
+      addUserToTable(username); 
+    }
+    document.getElementById("usernameDisplay").innerHTML = "Moshi Moshi " + username + " Kun !!!";
+  } else {
+    alert("Please enter your username.");
+  }
+}
+
+function countClicks() {
+  const username = document.getElementById("usernameInput").value;
+  if (username) {
+    users[username]++;
+    document.getElementById(username).innerHTML = users[username];
+    showGif(); 
+    playMusic(); 
+  } else {
+    alert("Please enter your username first.");
+  }
+}
+
+function addUserToTable(username) {
+  const table = document.getElementById("userClickTable");
+  const row = table.insertRow(-1); // Insert a row at the end of the table
+  const cell1 = row.insertCell(0);
+  const cell2 = row.insertCell(1);
+  cell1.innerHTML = username;
+  cell2.innerHTML = users[username];
+  cell2.id = username; // Set the id of the cell to the username for easy access
+}
+
+function showGif() {
+  const gifContainer = document.getElementById("gifContainer"); 
+  const img = document.createElement("img");
+  img.src = "kuru kuru.gif"; 
+  img.style.animation = 'repeat'; 
+  setTimeout(function() { 
+    img.style.animation = '';
+  }, 0);
+  gifContainer.appendChild(img);
+}
+
+function playMusic() {
+  const audio = new Audio('kururim.mp3'); 
+  audio.play();
+}
+
+</script>
+</head>
+<body>
+<div id="content">
+    <div id="head">
+      <h1>Welcome to KURU!</h1>
+    </div>
+    <div id="input">
+      <input type="text" style="padding:10px; border-radius: 20px;" id="usernameInput" placeholder="USERNAME" onblur="setUsername()">
+    </div>
+    <div id="text">
+      <h id="usernameDisplay"> "Enter Username and press KURU hehe have fun!"</h>
+    </div>
+    <div>
+    <button onclick="countClicks()">KURU!</button>
+  </div>
+</div>
+
+
+<p id="clickCountDisplay"></p>
+
+<table id="userClickTable" border="3" style="margin:auto;text-align: center;">
+  <tr>
+    <th>~ User ~</th>
+    <th>~ Squishes ~</th>
+  </tr>
+</table>
+
+
+<div id="gifContainer"></div>
+
+
+<audio id="backgroundMusic" loop>
+  <source src="kururim.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>
